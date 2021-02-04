@@ -59,6 +59,8 @@ export default class Battle {
   }
 
   battleMonster() {
+    const player1 =  new Character("Andrew", "Mage");
+    
     return this.player;
   }
 }

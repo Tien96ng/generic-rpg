@@ -1,8 +1,9 @@
-# (Application Name)
+# Generic RPG
 
 #### (Brief Description of Application)
 
-#### By (Your Name Here)
+#### By Tien Nguyen
+#### Co-Authored By Andrew Lawson
 
 ## Technologies Used
 
