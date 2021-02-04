@@ -36,6 +36,33 @@ describe("Character", () => {
       defense: 0
     });
   });
+  
+  test("Should turn the moves list of all the characters in the game available.", () => {
+    const newCharacter = new Character("Hulk", "swordsman");
+    expect(newCharacter.movesList).toEqual({
+      swordsman: {
+        slash: 5,
+        stab: 3,
+        kick: 4,
+        punch: 4
+      },
+      archer: {
+        shoot: 10,
+        rapidFire: newCharacter.level * 3
+      },
+      wizard: {
+        hocusPocus: 8,
+        electrocute: 9,
+        burn: 10,
+        heal: 10
+      },
+      thief: {
+        slash: 3,
+        sneakAttack: 10,
+        throw: newCharacter.inventory.weapon.length * 2
+      },
+    });
+  });
 
   test("Should return a new character starting at with base health and mana of 100 each.", () => {
     const newCharacter = new Character("Scooby Doo", "Marksman");
@@ -52,6 +79,7 @@ describe("Character", () => {
       misc: []
     });
   });
+
 
   test("Should return current Character's inventory.", () => {
     const newCharacter = new Character("Link", "Fighter");

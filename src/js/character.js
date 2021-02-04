@@ -18,6 +18,29 @@ export default class Character {
       armor: ["t-shirt", "pants"],
       potion: [],
       misc: []
+    },
+    this.movesList = {
+      swordsman: {
+        slash: 5,
+        stab: 3,
+        kick: 4,
+        punch: 4
+      },
+      archer: {
+        shoot: 10,
+        rapidFire: this.level * 3
+      },
+      wizard: {
+        hocusPocus: 8,
+        electrocute: 9,
+        burn: 10,
+        heal: 10 // Change later
+      },
+      thief: {
+        slash: 3,
+        sneakAttack: 10,
+        throw: this.inventory.weapon.length * 2
+      },
     }
   }
 
