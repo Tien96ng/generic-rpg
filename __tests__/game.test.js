@@ -19,4 +19,15 @@ describe("Character", () => {
     const newCharacter = new Character("Donald Duck", "Swordsman");
     expect(newCharacter.level).toEqual(1);
   });
+
+  test("Should return a new character starting at empty attributes.", () => {
+    const newCharacter = new Character("Scott Pilgram", "Tank");
+    expect(newCharacter.attributes).toEqual({
+      strength: 0,
+      intelligence: 0,
+      agility: 0,
+      charisma: 0,
+      defense: 0
+    });
+  });
 });
