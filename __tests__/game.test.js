@@ -1,5 +1,6 @@
 import Game from "../src/js/game.js";
 import Character from "../src/js/character.js";
+import Battle from "../src/js/battle.js";
 
 describe("Game", () => {
   test("Should return a game with player1 created.", () => {
@@ -81,5 +82,64 @@ describe("Character", () => {
     const newCharacter = new Character("Harry Potter", "Mage");
     newCharacter.xp = 100;
     expect(newCharacter.levelUp()).toEqual(true);
+  });
+});
+
+describe("Battle", () => {
+  test("Should return a battle with a player, a monster they are facing, and a list of all possible monsters.", () => {
+    const newBattle = new Battle("Iron Man");
+    expect(newBattle.player).toEqual("Iron Man");
+    expect(newBattle.monster).toEqual({});
+    expect(newBattle.monsterList).toEqual([
+      {
+        name: "Goblin",
+        greeting: "Gimme your gold",
+        health: 50,
+        mana: 50,
+        defense: 10,
+        xpGained: 12,
+        rewards: ["stick", "claymore"],
+        moves: {
+          slap: 5,
+          punch: 7,
+          dropKick: 12,
+          cower: 0
+        }
+      },
+      {
+        name: "Ork",
+        greeting: "Look's like meat's back on the menu!",
+        health: 100,
+        mana: 100,
+        defense: 20,
+        xpGained: 18,
+        rewards: ["knife", "health potion"],
+        moves: {
+          slice: 10,
+          throw: 12,
+          bite: 18
+        }
+      },
+      {
+        name: "Juggernaut",
+        greeting: "You're a wee little thing ain't ya?",
+        health: 150,
+        mana: 100,
+        defense: 50,
+        xpGained: 20,
+        rewards: ["long sword", "cooked meat" ],
+        moves: {
+          swat: 10,
+          pound: 15,
+          smother: 25,
+          winded: 0
+        }
+      }
+    ]);
+  });
+
+  test("Should return monster and their greeting when encountered for battle.", () => {
+    const newBattle = new Battle("Goku");
+    expect(newBattle.randomEncounter()).toEqual(`${newBattle.monster.name}: ${newBattle.monster.greeting}`);
   });
 });
