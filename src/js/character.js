@@ -13,8 +13,8 @@ export default class Character {
     }
     this.level = 1;
     this.inventory = {
-      weapons:  [],
-      armor: [],
+      weapons:  ["stick"],
+      armor: ["t-shirt", "pants"],
       potions: [],
       misc: []
     }

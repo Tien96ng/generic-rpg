@@ -30,4 +30,20 @@ describe("Character", () => {
       defense: 0
     });
   });
+
+  test("Should return a new character starting at with base health and mana of 100 each.", () => {
+    const newCharacter = new Character("Scooby Doo", "Marksman");
+    expect(newCharacter.health).toEqual(100);
+    expect(newCharacter.mana).toEqual(100);
+  });
+
+  test("Should return a new character starting out with a stick, t-shirt, and pants.", () => {
+    const newCharacter = new Character("Link", "Fighter");
+    expect(newCharacter.inventory).toEqual({
+      weapons:  ["stick"],
+      armor: ["t-shirt", "pants"],
+      potions: [],
+      misc: []
+    });
+  });
 });
