@@ -170,4 +170,10 @@ describe("Battle", () => {
     const newBattle = new Battle("Goku");
     expect(newBattle.randomEncounter()).toEqual(`${newBattle.monster.name}: ${newBattle.monster.greeting}`);
   });
+
+  test("Should return the player that is going to battle.", () => {
+    const andrew = new Character("Andrew", "Mage");
+    const newBattle = new Battle(andrew.name);
+    expect(newBattle.battleMonster()).toEqual("Andrew");
+  })
 });

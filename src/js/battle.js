@@ -1,3 +1,5 @@
+import Character from "./character.js";
+
 export default class Battle {
   constructor(player) {
     this.player = player;
@@ -54,5 +56,9 @@ export default class Battle {
     let randomNum =  Math.floor(Math.random() * this.monsterList.length);
     this.monster = this.monsterList[randomNum];
     return `${this.monster.name}: ${this.monster.greeting}`;
+  }
+
+  battleMonster() {
+    return this.player;
   }
 }
