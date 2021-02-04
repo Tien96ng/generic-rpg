@@ -20,6 +20,11 @@ describe("Character", () => {
     expect(newCharacter.level).toEqual(1);
   });
 
+  test("Should return a new character starting at 0xp (experience points).", () => {
+    const newCharacter = new Character("Tony Stark", "Mechanic");
+    expect(newCharacter.experience).toEqual(0);
+  });
+
   test("Should return a new character starting at empty attributes.", () => {
     const newCharacter = new Character("Scott Pilgram", "Tank");
     expect(newCharacter.attributes).toEqual({

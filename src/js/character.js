@@ -2,6 +2,8 @@ export default class Character {
   constructor(name, characterClass) {
     this.name = name;
     this.characterClass = characterClass;
+    this.level = 1;
+    this.xp = 0;
     this.health = 100;
     this.mana = 100;
     this.attributes = {
@@ -11,7 +13,6 @@ export default class Character {
       charisma: 0,
       defense: 0
     }
-    this.level = 1;
     this.inventory = {
       weapon:  ["stick"],
       armor: ["t-shirt", "pants"],
