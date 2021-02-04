@@ -13,10 +13,19 @@ export default class Character {
     }
     this.level = 1;
     this.inventory = {
-      weapons:  ["stick"],
+      weapon:  ["stick"],
       armor: ["t-shirt", "pants"],
-      potions: [],
+      potion: [],
       misc: []
     }
-  } 
+  }
+
+  viewInventory() {
+    return this.inventory;
+  }
+
+  addToInventory(itemType, item) {
+    this.inventory[itemType] = this.inventory[itemType].concat(item);
+    return this.inventory;
+  }
 }

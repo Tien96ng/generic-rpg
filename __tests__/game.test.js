@@ -40,9 +40,29 @@ describe("Character", () => {
   test("Should return a new character starting out with a stick, t-shirt, and pants.", () => {
     const newCharacter = new Character("Link", "Fighter");
     expect(newCharacter.inventory).toEqual({
-      weapons:  ["stick"],
+      weapon:  ["stick"],
       armor: ["t-shirt", "pants"],
-      potions: [],
+      potion: [],
+      misc: []
+    });
+  });
+
+  test("Should return current Character's inventory.", () => {
+    const newCharacter = new Character("Link", "Fighter");
+    expect(newCharacter.viewInventory()).toEqual({
+      weapon:  ["stick"],
+      armor: ["t-shirt", "pants"],
+      potion: [],
+      misc: []
+    });
+  });
+
+  test("Should return updated inventory with the item added.", () => {
+    const newCharacter = new Character("Naruto", "Ninja");
+    expect(newCharacter.addToInventory("weapon", "kunai")).toEqual({
+      weapon:  ["stick", "kunai"],
+      armor: ["t-shirt", "pants"],
+      potion: [],
       misc: []
     });
   });
