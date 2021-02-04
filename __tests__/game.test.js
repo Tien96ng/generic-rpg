@@ -5,7 +5,7 @@ describe("Game", () => {
   test("Should return a game with player1 created.", () => {
     const newGame =  new Game("player1");
     expect(newGame.player1).toEqual("player1");
-  })
+  });
 });
 
 describe("Character", () => {
@@ -13,5 +13,10 @@ describe("Character", () => {
     const newCharacter =  new Character("Cloud", "Swordsman");
     expect(newCharacter.name).toEqual("Cloud");
     expect(newCharacter.characterClass).toEqual("Swordsman");
-  })
+  });
+
+  test("Should return a new character starting at level 1.", () => {
+    const newCharacter = new Character("Donald Duck", "Swordsman");
+    expect(newCharacter.level).toEqual(1);
+  });
 });
