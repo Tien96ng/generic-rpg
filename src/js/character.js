@@ -29,4 +29,16 @@ export default class Character {
     this.inventory[itemType] = this.inventory[itemType].concat(item);
     return this.inventory;
   }
+
+  levelUp() {
+    let leftOverXP = 0;
+    if(this.xp >= 100) {
+      leftOverXP = this.xp - 100;
+      this.level++;
+      this.xp = leftOverXP
+      return true;
+    } else {
+      return false;
+    }
+  }
 }

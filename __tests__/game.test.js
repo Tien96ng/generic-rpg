@@ -22,7 +22,7 @@ describe("Character", () => {
 
   test("Should return a new character starting at 0xp (experience points).", () => {
     const newCharacter = new Character("Tony Stark", "Mechanic");
-    expect(newCharacter.experience).toEqual(0);
+    expect(newCharacter.xp).toEqual(0);
   });
 
   test("Should return a new character starting at empty attributes.", () => {
@@ -70,5 +70,16 @@ describe("Character", () => {
       potion: [],
       misc: []
     });
+  });
+
+  test("Should return false because the player hasn't gained enough xp to level up.", () => {
+    const newCharacter = new Character("Harry Potter", "Mage");
+    expect(newCharacter.levelUp()).toEqual(false);
+  });
+
+  test("Should return true because the player gained at least 100xp to level up.", () => {
+    const newCharacter = new Character("Harry Potter", "Mage");
+    newCharacter.xp = 100;
+    expect(newCharacter.levelUp()).toEqual(true);
   });
 });
